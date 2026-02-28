@@ -22,13 +22,9 @@ export default function DoctorDashboard() {
   const { user } = useAuthStore();
   const { appointments, addAppointment, profile } = useDoctorStore();
   const { links } = useLinkStore();
-
   const doctorId = user?.id || 'user_doctor_1';
   const activePatients = links.filter(l => l.doctorId === doctorId && l.status === 'accepted');
-  const pendingRequests = links.filter(l => l.doctorId === doctorId && l.status === 'pending');
-
   const patientsLength = activePatients.length;
-  const pendingApprovalsCount = pendingRequests.length;
 
   // Load mock data
   useEffect(() => {

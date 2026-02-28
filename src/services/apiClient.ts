@@ -12,7 +12,6 @@ import type {
     Appointment,
     ResearchQuery
 } from '@/types';
-import * as Mocks from './mockData';
 import { useAuthStore } from '@/store';
 
 const BASE_URL = '/api/v1';
